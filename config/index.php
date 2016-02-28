@@ -52,7 +52,7 @@ else if(isset($theme)){
     $ch = curl_init();
 
     // set url
-    curl_setopt($ch, CURLOPT_URL, "http://sanstatic.com/templates/" . $theme . ".html");
+    curl_setopt($ch, CURLOPT_URL, "http://sanstatic.com/theme/" . $theme . ".html");
 
     //return the transfer as a string
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -83,7 +83,6 @@ if($compile) {
 
 	$less->compileFile($input, $output);
 
-	header('Location: http://sanstatic.com/templates/config/deploy/' . $theme . ".html");
 }
 else {
 
@@ -91,7 +90,8 @@ else {
 
 }
 
-// Push new CSS & HTML to GitHub
+
+if($compile) header('Location: http://sanstatic.com/theme/config/deploy/' . $theme . ".html");
 
 ?>
 
