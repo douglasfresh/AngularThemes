@@ -52,7 +52,7 @@ else if(isset($theme)){
     $ch = curl_init();
 
     // set url
-    curl_setopt($ch, CURLOPT_URL, "http://sanstatic.com/theme/" . $theme . ".html");
+    curl_setopt($ch, CURLOPT_URL, "http://sanstatic.com/themes/" . $theme . ".html");
 
     //return the transfer as a string
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -66,7 +66,7 @@ else if(isset($theme)){
 }
 
 // Compile the LESS from HTTP get
-if($compile) {
+if($compile && $theme != 'landing-page') {
 
 	// Resources
 	$variables = "less/" . $theme . "/variables.less";
@@ -91,7 +91,7 @@ else {
 }
 
 
-if($compile) header('Location: http://sanstatic.com/theme/config/deploy/' . $theme . ".html");
+if($compile) header('Location: http://sanstatic.com/themes/config/deploy/' . $theme . ".html");
 
 ?>
 
