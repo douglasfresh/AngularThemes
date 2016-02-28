@@ -160,7 +160,13 @@ if($compile) header('Location: http://sanstatic.com/themes/config/deploy/' . $th
 		
 			<div class="col-lg-6">
 				<div class="row">
-			    	<h3>Themes</h3>
+			    	<h3>Angular</h3>
+			    	<ul>
+			    		<li ng-repeat="t in themes"><a ng-href="../{{t}}.html" target="_blank">{{t}}</a>
+			    	</ul>
+				</div>
+				<div class="row">
+			    	<h3>Static</h3>
 			    	<ul>
 			    		<li ng-repeat="t in themes"><a ng-href="deploy/{{t}}.html" target="_blank">{{t}}</a>
 			    	</ul>
